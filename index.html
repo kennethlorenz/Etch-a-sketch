@@ -8,7 +8,23 @@
   </head>
   <body>
     <h1>Etch-A-Sketch</h1>
-    <div id="gridContainer" class="gridContainer"></div>
+    <div class="container">
+      <div>
+        <p class="sliderText">Size: <span id="sliderValue"></span></p>
+        <div class="slideContainer">
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="16"
+            class="slider"
+            id="slider"
+          />
+        </div>
+      </div>
+      <div id="gridContainer" class="gridContainer"></div>
+    </div>
+
     <script src="./index.js"></script>
   </body>
 </html>

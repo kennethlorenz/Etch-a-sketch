@@ -1,6 +1,12 @@
 const gridContainer = document.querySelector("#gridContainer");
-const gridSize = 16;
+var gridSize = 16;
 var grids;
+var slider = document.getElementById("slider");
+var sliderOutput = document.getElementById("sliderValue");
+sliderOutput.textContent = slider.value;
+slider.oninput = function () {
+  sliderOutput.textContent = this.value;
+};
 function createGrid() {
   for (let i = 0; i < gridSize * gridSize; i++) {
     const grid = document.createElement("div");
