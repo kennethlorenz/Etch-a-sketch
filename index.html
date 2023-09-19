@@ -9,18 +9,23 @@
   <body>
     <h1>Etch-A-Sketch</h1>
     <div class="container">
-      <div>
-        <p class="sliderText">Size: <span id="sliderValue"></span></p>
-        <div class="slideContainer">
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value="16"
-            class="slider"
-            id="slider"
-          />
+      <div class="menu">
+        <button>Color: Black</button>
+        <button>Color: RGB</button>
+        <div>
+          <p class="sliderText">Size: <span id="sliderValue"></span></p>
+          <div class="slideContainer">
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="16"
+              class="slider"
+              id="slider"
+            />
+          </div>
         </div>
+        <button>Reset</button>
       </div>
       <div id="gridContainer" class="gridContainer"></div>
     </div>
