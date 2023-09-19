@@ -1,0 +1,39 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  /* sets base font size to 10px */
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 7rem;
+}
+
+.gridContainer {
+  height: 50.2rem;
+  width: 50.2rem;
+  margin: 0 auto;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid:hover {
+  background: black;
+}
