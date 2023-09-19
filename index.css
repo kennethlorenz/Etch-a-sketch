@@ -29,7 +29,9 @@ h1 {
   height: 50.2rem;
   width: 50.2rem;
   margin: 0 auto;
-  border: 1px solid black;
+  border: 0.5px solid #141414;
+  box-shadow: 0 0 5px 5px #141414;
+  border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -40,6 +42,28 @@ h1 {
 
 .black {
   background: black;
+}
+
+/* menu */
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+button {
+  display: block;
+  padding: 1rem 2rem;
+  border: 0.5px solid #141414;
+  box-shadow: 0 0 5px 5px #141414;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.25);
 }
 
 /* slider */
