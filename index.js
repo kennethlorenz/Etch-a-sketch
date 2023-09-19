@@ -6,6 +6,8 @@ var sliderOutput = document.getElementById("sliderValue");
 sliderOutput.textContent = slider.value;
 slider.oninput = function () {
   sliderOutput.textContent = this.value;
+  gridSize = this.value;
+  console.log(gridSize);
 };
 function createGrid() {
   for (let i = 0; i < gridSize * gridSize; i++) {
@@ -42,9 +44,20 @@ function mouseDown() {
   });
 }
 
+function clearGrid() {
+  grids.forEach((box) => {
+    box.remove();
+  });
+}
+
 function draw() {
   mouseHover();
   mouseDown();
 }
 
 draw();
+slider.addEventListener("change", () => {
+  clearGrid();
+  createGrid();
+  draw();
+});
