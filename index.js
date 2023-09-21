@@ -3,6 +3,8 @@ var gridSize = 16;
 var grids;
 var slider = document.getElementById("slider");
 var sliderOutput = document.getElementById("sliderValue");
+var blackButton = document.getElementById("blackButton");
+var rgbButton = document.getElementById("rgbButton");
 sliderOutput.textContent = slider.value;
 slider.oninput = function () {
   sliderOutput.textContent = this.value;
@@ -25,13 +27,25 @@ function createGrid() {
 
 createGrid();
 
-console.log(grids);
+function getRandomColor() {
+  var letters = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
 function mouseHover() {
   grids.forEach((item) => {
     item.addEventListener("mouseover", (e) => {
       if (e.buttons == 1 || e.buttons == 3) {
-        item.classList.add("black");
+        //checks if color black is selected
+        if (!blackButton.classList.contains("active")) {
+          item.style.background = getRandomColor();
+        } else {
+          item.style.background = "black";
+        }
       }
     });
   });
@@ -39,7 +53,12 @@ function mouseHover() {
 function mouseDown() {
   grids.forEach((item) => {
     item.addEventListener("mousedown", () => {
-      item.classList.add("black");
+      //checks if color black is selected
+      if (!blackButton.classList.contains("active")) {
+        item.style.background = getRandomColor();
+      } else {
+        item.style.background = "black";
+      }
     });
   });
 }
@@ -60,4 +79,16 @@ slider.addEventListener("change", () => {
   clearGrid();
   createGrid();
   draw();
+});
+
+rgbButton.addEventListener("click", () => {
+  blackButton.classList.remove("active");
+  rgbButton.classList.add("active");
+  console.log(rgbButton.classList);
+});
+
+blackButton.addEventListener("click", () => {
+  rgbButton.classList.remove("active");
+  blackButton.classList.add("active");
+  console.log(blackButton.classList);
 });
