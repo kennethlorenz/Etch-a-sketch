@@ -99,3 +99,4 @@ blackButton.addEventListener("click", () => {
 });
 
 resetButton.addEventListener("click", resetGrid);
+document.querySelector(".currentYear").textContent = new Date().getFullYear();
