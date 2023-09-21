@@ -6,12 +6,15 @@ var sliderOutput = document.getElementById("sliderValue");
 var blackButton = document.getElementById("blackButton");
 var rgbButton = document.getElementById("rgbButton");
 const resetButton = document.getElementById("resetButton");
+document.querySelector(".currentYear").textContent = new Date().getFullYear();
+
 sliderOutput.textContent = slider.value;
 slider.oninput = function () {
   sliderOutput.textContent = this.value;
   gridSize = this.value;
   console.log(gridSize);
 };
+
 function createGrid() {
   for (let i = 0; i < gridSize * gridSize; i++) {
     const grid = document.createElement("div");
@@ -25,8 +28,6 @@ function createGrid() {
 
   grids = document.querySelectorAll(".grid");
 }
-
-createGrid();
 
 function getRandomColor() {
   var letters = "0123456789ABCDEF";
@@ -75,16 +76,14 @@ function draw() {
   mouseDown();
 }
 
-draw();
-slider.addEventListener("change", () => {
-  resetGrid();
-});
-
 function resetGrid() {
   clearGrid();
   createGrid();
   draw();
 }
+
+createGrid();
+draw();
 
 rgbButton.addEventListener("click", () => {
   blackButton.classList.remove("active");
@@ -99,4 +98,6 @@ blackButton.addEventListener("click", () => {
 });
 
 resetButton.addEventListener("click", resetGrid);
-document.querySelector(".currentYear").textContent = new Date().getFullYear();
+slider.addEventListener("change", () => {
+  resetGrid();
+});
