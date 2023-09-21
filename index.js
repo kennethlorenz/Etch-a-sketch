@@ -77,7 +77,7 @@ function draw() {
 
 draw();
 slider.addEventListener("change", () => {
-  reset();
+  resetGrid();
 });
 
 function resetGrid() {
