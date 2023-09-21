@@ -36,14 +36,6 @@ h1 {
   flex-wrap: wrap;
 }
 
-.grid:hover {
-  background: black;
-}
-
-.black {
-  background: black;
-}
-
 /* menu */
 
 .menu {
@@ -64,6 +56,11 @@ button {
 button:hover {
   cursor: pointer;
   transform: scale(1.25);
+}
+
+.active {
+  background: black;
+  color: white;
 }
 
 /* slider */
