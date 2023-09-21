@@ -81,6 +81,7 @@ function resetGrid() {
   clearGrid();
   createGrid();
   draw();
+  checkToggle();
 }
 
 createGrid();
@@ -101,6 +102,7 @@ blackButton.addEventListener("click", () => {
 resetButton.addEventListener("click", resetGrid);
 slider.addEventListener("change", () => {
   resetGrid();
+  checkToggle();
 });
 
 function checkToggle() {
