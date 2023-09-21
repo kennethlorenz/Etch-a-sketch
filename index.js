@@ -5,6 +5,7 @@ var slider = document.getElementById("slider");
 var sliderOutput = document.getElementById("sliderValue");
 var blackButton = document.getElementById("blackButton");
 var rgbButton = document.getElementById("rgbButton");
+const resetButton = document.getElementById("resetButton");
 sliderOutput.textContent = slider.value;
 slider.oninput = function () {
   sliderOutput.textContent = this.value;
@@ -76,10 +77,14 @@ function draw() {
 
 draw();
 slider.addEventListener("change", () => {
+  reset();
+});
+
+function resetGrid() {
   clearGrid();
   createGrid();
   draw();
-});
+}
 
 rgbButton.addEventListener("click", () => {
   blackButton.classList.remove("active");
@@ -92,3 +97,5 @@ blackButton.addEventListener("click", () => {
   blackButton.classList.add("active");
   console.log(blackButton.classList);
 });
+
+resetButton.addEventListener("click", resetGrid);
