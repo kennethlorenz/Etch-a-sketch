@@ -7,6 +7,7 @@ var blackButton = document.getElementById("blackButton");
 var rgbButton = document.getElementById("rgbButton");
 const resetButton = document.getElementById("resetButton");
 document.querySelector(".currentYear").textContent = new Date().getFullYear();
+var toggleButton = document.getElementById("toggle");
 
 sliderOutput.textContent = slider.value;
 slider.oninput = function () {
@@ -101,3 +102,17 @@ resetButton.addEventListener("click", resetGrid);
 slider.addEventListener("change", () => {
   resetGrid();
 });
+
+function checkToggle() {
+  if (toggleButton.checked) {
+    grids.forEach((item) => {
+      item.style.border = "1px solid black";
+    });
+  } else {
+    grids.forEach((item) => {
+      item.style.border = "unset";
+    });
+  }
+}
+
+toggleButton.addEventListener("change", checkToggle);
